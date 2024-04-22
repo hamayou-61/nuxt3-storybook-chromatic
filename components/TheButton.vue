@@ -7,6 +7,7 @@
     :exact="exact"
     :elevation="elevation"
     :disabled="disabled"
+    size="medium"
     @click="() => emits('click', 'Event')"
   >
     {{ label }}
