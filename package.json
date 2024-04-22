@@ -10,7 +10,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint --fix './**/*.vue'",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
@@ -33,6 +34,7 @@
     "@storybook/vue3-vite": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
+    "chromatic": "^11.3.0",
     "eslint": "^8.57.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-storybook": "^0.8.0",
@@ -44,5 +46,6 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  }
+  },
+  "version": ""
 }
