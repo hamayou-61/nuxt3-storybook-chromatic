@@ -9,7 +9,7 @@
     :disabled="disabled"
     size="medium"
     @click="() => emits('click', 'Event')"
-  >
+  >テスト
     {{ label }}
   </v-btn>
 </template>
