@@ -9,7 +9,7 @@
     :disabled="disabled"
     size="medium"
     @click="() => emits('click', 'Event')"
-  >テスト
+  >
     {{ label }}
   </v-btn>
 </template>
@@ -28,7 +28,6 @@ defineProps<{
   disabled?: boolean
   height?: string | number
   href?: string
-  icon?: any
   loading?: string | boolean
 }>()
 const emits = defineEmits<{

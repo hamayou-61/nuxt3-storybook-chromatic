@@ -4,7 +4,7 @@ import * as directives from 'vuetify/directives'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import 'vuetify/styles'
 import { vuetifyTheme } from './vuetify.theme'
-import { mdiChevronDown } from '@mdi/js'
+import { mdiChevronDown, mdiFileOutline } from '@mdi/js'
 
 const vuetify = createVuetify({
   components,
@@ -12,14 +12,15 @@ const vuetify = createVuetify({
   theme: {
     defaultTheme: 'vuetifyTheme',
     themes: {
-      vuetifyTheme,
-    },
+      vuetifyTheme
+    }
   },
   icons: {
     defaultSet: 'mdi',
     aliases: {
       ...aliases,
       chevronDown: mdiChevronDown,
+      fileOutline: mdiFileOutline
     },
     sets: {
       mdi
