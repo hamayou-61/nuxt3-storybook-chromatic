@@ -3,11 +3,11 @@
     <v-btn
       variant="tonal"
       class="font-weight-bold"
-      prepend-icon="mdi-file-outline"
-      color="secondary"
-      data-testid=""
+      prepend-icon="$fileOutline"
+      :color="color"
+      :href="mainLink.url"
     >
-      テストです。
+      {{ mainLink.label }}
       <v-badge
         v-if="isNew"
         color="warning"
@@ -17,22 +17,20 @@
     </v-btn>
     <v-divider vertical />
     <v-menu :close-on-content-click="false">
-      <template v-slot:activator="{ props }">
+      <template #activator="{ props }">
         <v-btn
           variant="tonal"
           v-bind="props"
           size="x-small"
-          color="secondary"
-          data-testid="new-order-chevron-down"
+          :color="color"
         >
-
           <v-icon size="x-large" icon="$chevronDown" />
         </v-btn>
       </template>
       <v-list>
-        <v-list-item link>
-          <v-list-item-title  data-testid="ci-medical-new-order-button">
-            リストページ
+        <v-list-item v-for="(subLink,index) in subLinks" :key="index">
+          <v-list-item-title :href="subLink.url">
+            {{ subLink.label }}
           </v-list-item-title>
         </v-list-item>
       </v-list>
@@ -41,11 +39,29 @@
 </template>
 
 <script setup lang="ts">
+
+type Link = {
+  label?: string;
+  url?: string;
+};
+
 defineProps<{
+
   /**
    * Newバッジ
    */
   isNew?: boolean
+
+  /**
+   * ボタンの色 'primary' | 'secondary' | 'default'
+   */
+  color?: 'primary' | 'secondary' | 'default'
+
+  /**
+   * ボタンの表示ラベルとリンク
+   */
+  mainLink: Link
+  subLinks: Link[]
 }>()
 
 </script>
