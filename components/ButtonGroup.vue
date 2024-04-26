@@ -6,7 +6,7 @@
       prepend-icon="$fileOutline"
       :color="color"
       :href="mainLink.url"
-    >テスト
+    >
       {{ mainLink.label }}
       <v-badge
         v-if="isNew"
